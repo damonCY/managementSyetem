@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta name="name" charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./app/css/main.less">
+	<link rel="stylesheet" type="text/css" href="./app/css/font-awesome/css/font-awesome.css">
+</head>
+<body>
+<div class="content" ng-controller="main">
+		<header id="header" class="header">
+			<a href="/" class="logo" title="">
+				<img src="./app/img/logo.png" alt="">企业资金管理系统
+			</a>
+			<span class="right">
+				<span class="user">damon-chen</span>
+				<a href="#/about" title="" ng-click="about($event)" class="about">关于</a>
+			</span>
+		</header>
+		<aside class="menus">
+			<div class="sidebar-section" ng-slimscroll rail-visible="true" height="100%">
+		        <ul class="nav main-menu"  accordion>
+		            <span ng-repeat="menu in menuList track by $index" >
+		                <li ng-if="menu.child.length > 0" accordion-group is-open="menu.open" ng-class="{active: menu.open}" is-disabled="true">
+		                    <accordion-heading>
+		                        <i ng-if="menu.icon" class="fa {{menu.icon}}"></i>
+		                        <span ng-bind="menu.name"></span>
+		                        <i class="right" ng-class='{"fa  fa-angle-right":!menu.open,"fa fa-angle-down":menu.open}'></i>
+		                    </accordion-heading>
+
+		                    <ul class="child-menu">
+		                        <li ng-repeat="child in menu.child" ng-class="{active: $state.includes(child.code)}">
+		                            <a ui-sref="{{child.code}}"><span ng-bind="child.name"></span></a> 
+		                        </li>
+		                    </ul>
+		                </li>
+		                <li ng-if="!menu.child || menu.child.length == 0">
+		                    <a class="main-link" ui-sref="{{menu.code}}">
+		                    <i ng-if="menu.icon" class="fa {{menu.icon}}"></i><span ng-bind="menu.name"></span>
+		                    </a> 
+		                </li>
+		            </span>
+		        </ul>
+		    </div>
+		</aside>
+		<article class="main-content">
+			<div ui-view></div>
+			<footer><b>Copyright</b> 向日葵科技有限公司 © 2015-2016 <span class="right">向日葵科技,荣誉出品</span></footer>
+		</article>
+</div>
+</body>
+<script data-main="./app/js/main" src="./app/js/lib/requirejs/require.js"></script>
+</html>
