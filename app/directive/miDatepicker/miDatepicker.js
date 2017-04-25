@@ -5,11 +5,9 @@
 define(function(require,exports,module){ 
 var app = require('app');
 
-//miDatepicker.$inject = [];
-
-app.directive('miDatepicker', ['$filter', function($filter) {
+app.register.directive('miDatepicker', ['$filter', function($filter) {
     return {
-        restrict: 'E',
+        restrict: 'AE',
         replace: true,
         template: __inline('miDatepicker.html'),
         scope: {

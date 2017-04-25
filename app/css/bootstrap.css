@@ -249,6 +249,7 @@ th {
     border: 1px solid #000;
   }
   .table {
+    background-color: #fff !important;
     border-collapse: collapse !important;
   }
   .table td,
@@ -1083,8 +1084,8 @@ html {
 }
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
   line-height: 1.42857143;
+  font-size: 13px;
   color: #333;
   background-color: #fff;
 }
@@ -1265,7 +1266,7 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 20px;
 }
 h2,
 .h2 {
@@ -5046,7 +5047,7 @@ a.badge:focus {
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 16px 5px;
   margin-bottom: 20px;
   line-height: 1.42857143;
   background-color: #fff;

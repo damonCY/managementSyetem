@@ -1,6 +1,6 @@
 define(function(require,exports,module){
 	var app = require("app");
-	app.directive('mselect',  [function(){
+	app.register.directive('mselect',  [function(){
     return {
         restrict: 'E',
         replace: true,
