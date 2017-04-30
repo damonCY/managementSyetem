@@ -16,14 +16,14 @@ define(function(require,exports,module){
         	},
         	link: function($scope,isElement,iAttrs){
 
-        		$scope.$watch("options",function(){
-
+        		$scope.$watch("options",function(value){
+                    if($scope.value){
+                        $scope.displayName = $scope.value;
+                    }else{
+                        $scope.displayName = $scope.options[0].name || $scope.options[0];
+                    }
         		});
-        		if($scope.value){
-        			$scope.displayName = $scope.value;
-        		}else{
-        			$scope.displayName = $scope.options[0].name || $scope.options[0];
-        		}
+        		
         		$scope.selcet = function(option) {
 	                var _displayName = option.name || option;
 	                $scope.displayName = _displayName;
